@@ -3,6 +3,7 @@ from pathlib import Path
 import skimage.io
 import numpy as np
 from pydantic import BaseModel, Field, validator
+import uvicorn
 import imaging_server_kit as serverkit
 import rembg
 
@@ -95,3 +96,7 @@ class Server(serverkit.Server):
 
 server = Server()
 app = server.app
+
+
+if __name__=='__main__':
+    uvicorn.run("main:app", host="0.0.0.0", port=8000)
