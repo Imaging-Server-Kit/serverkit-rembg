@@ -2,7 +2,7 @@ from typing import List, Literal, Tuple, Type
 from pathlib import Path
 import skimage.io
 import numpy as np
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, field_validator
 import uvicorn
 import imaging_server_kit as serverkit
 import rembg
@@ -21,7 +21,7 @@ class Parameters(BaseModel):
         json_schema_extra={"widget_type": "dropdown"},
     )
 
-    @validator("image", pre=False, always=True)
+    @field_validator("image", mode="before")
     def decode_image_array(cls, v) -> np.ndarray:
         image_array = serverkit.decode_contents(v)
         if image_array.ndim not in [2, 3]:
