@@ -3,8 +3,6 @@
 
 Implementation of a web API server for [rembg](https://github.com/danielgatis/rembg).
 
-Author: EPFL Center for Imaging
-
 ## Installation with `pip`
 
 Install dependencies:

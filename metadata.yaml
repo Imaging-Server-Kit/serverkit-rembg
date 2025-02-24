@@ -1,7 +1,6 @@
 project_slug: "rembg"
 project_url: "https://github.com/danielgatis/rembg"
 serverkit_repo_url: "https://github.com/Imaging-Server-Kit/serverkit-rembg"
-serverkit_author: "EPFL Center for Imaging"
 project_name: "Rembg"
 description: "A tool to remove images background."
 used_for:
