@@ -84,7 +84,7 @@ class Server(serverkit.Server):
         }
 
         return [
-            (segmentation, segmentation_params, "labels"),
+            (segmentation, segmentation_params, "mask"),
         ]
 
     def load_sample_images(self) -> List["np.ndarray"]:
