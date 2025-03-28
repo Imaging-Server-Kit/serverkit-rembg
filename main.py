@@ -29,7 +29,7 @@ class Parameters(BaseModel):
         return image_array
 
 
-class Server(serverkit.Server):
+class RembgServer(serverkit.AlgorithmServer):
     def __init__(
         self,
         algorithm_name: str = "rembg",
@@ -94,9 +94,9 @@ class Server(serverkit.Server):
         return images
 
 
-server = Server()
+server = RembgServer()
 app = server.app
 
 
-if __name__=='__main__':
+if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000)
